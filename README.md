@@ -6,3 +6,12 @@ Almost entirely derived from by Patricio Toledo's original syntax file (http://w
 3) For all other scraps, the opening "@{" must be followed by a newline.
 
 It's very easy to extend this syntax file to handle other languages. If someone else could fix #3, so that "@{anything@}" scraps could work without a newline following "@{", I'd appreciate it. Also, other ideas on doing multi-language highlighting are welcome.
+
+
+# 2017 Version
+
+This is my personal modification. My goals are to add more programming languages and some cool features.
+
+# TODO 
+
+- [ ] Support `cpp`.
