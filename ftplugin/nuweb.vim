@@ -11,6 +11,10 @@ if !exists('g:vimnuweb_source_dir')
     let g:vimnuweb_source_dir = './'
 endif
 
+if !exists('g:vimnuweb_tex_dir')
+    let g:vimnuweb_tex_dir = './'
+endif
+
 function! s:MapNotHasmapto(lhs, rhs)
     if !hasmapto('<Plug>' . a:rhs)
         execute 'nmap <buffer>' . a:lhs . ' <Plug>' . a:rhs
@@ -18,9 +22,9 @@ function! s:MapNotHasmapto(lhs, rhs)
     endif
 endfunction
 
-function! s:BuildTeXFile()
+function! s:BuildTeXFile(pth)
     write
-    execute "AsyncRun nuweb -l -o -r -d " . expand('%')
+    execute "AsyncRun nuweb -l -o -r -d -p " . a:pth . " " . expand('%')
 endfunction
 
 function! s:BuildSourceFiles(pth)
@@ -29,7 +33,7 @@ function! s:BuildSourceFiles(pth)
 endfunction
 
 autocmd FileType nuweb nnoremap <Plug>Nuweb_BuildTeXFile
-            \ :call <sid>BuildTeXFile()<CR>
+            \ :call <sid>BuildTeXFile(g:vimnuweb_tex_dir)<CR>
 autocmd FileType nuweb nnoremap <Plug>Nuweb_BuildSourceFiles
             \ :call <sid>BuildSourceFiles(g:vimnuweb_source_dir)<cr>
 

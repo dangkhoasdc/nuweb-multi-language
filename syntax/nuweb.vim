@@ -47,7 +47,7 @@ syn match   nuwebScrap	   "@\((\|)\)\+"
 
 syn match   nuwebParameter "@\d\+"
 
-" Coments inside Scrap
+" Comments inside Scrap
 syn match   nuwebComment   "@%.*$"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

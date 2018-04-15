@@ -5,6 +5,7 @@
 augroup NuwebDetect
   autocmd!
   autocmd BufRead,BufNewFile *.nw,*.nuweb set filetype=nuweb
+  autocmd BufRead,BufNewFile *.nw,*.nuweb setlocal commentstring=%\ %s
 augroup END
 
 
