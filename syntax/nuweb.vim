@@ -7,6 +7,7 @@
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
+"
 if exists("b:current_syntax")
   finish
 endif
@@ -15,9 +16,9 @@ unlet! b:current_syntax
 runtime! syntax/tex.vim
 runtime! after/syntax/tex.vim
 
-
 unlet b:current_syntax
 syntax include @CPP syntax/cpp.vim
+syntax include @CPP syntax/doxygen.vim
 try
   syntax include @CPP after/syntax/cpp.vim
 catch
@@ -25,7 +26,7 @@ endtry
 
 syntax cluster texFoldGroup add=texZoneCpp
 syntax region texZoneCpp matchgroup=SpecialComment
-      \ start="@{\/\*cpp\*\/"rs=s
+      \ start="@{"rs=s
       \ end="@}"re=e
       \ keepend
       \ transparent
@@ -64,4 +65,3 @@ hi def link  nuwebError	    Error
 " interspersed in certain defined regions.
 "
 let b:current_syntax = "nuweb"
-

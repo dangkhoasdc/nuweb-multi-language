@@ -1,17 +1,26 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=2746
 
-Almost entirely derived from by Patricio Toledo's original syntax file (http://www.vim.org/scripts/script.php?script_id=543) which highlits NUWEB scraps without any language-dependent syntax highlighting. I modified it in the following ways:
-1) Scraps beginning with "@{/* C */" will be highlit as C
-2) Scraps beginning with "@{# Python" will be highlit as Python.
-3) For all other scraps, the opening "@{" must be followed by a newline.
+# Installation
 
-It's very easy to extend this syntax file to handle other languages. If someone else could fix #3, so that "@{anything@}" scraps could work without a newline following "@{", I'd appreciate it. Also, other ideas on doing multi-language highlighting are welcome.
+```
+    Plug 'skywind3000/asyncrun.vim'
+    Plug 'dangkhoasdc/nuweb-multi-language'
+```
 
+# Options
 
-# 2017 Version
+- `g:vimnuweb_enabled`: enable the plugin. Default: 1
+- `g:vimnuweb_mappings`: enable the default mappings:
+    * `F9`: build the TeX file from the current buffer.
+    * `F10`: build the source code from the current buffer.
 
-This is my personal modification. My goals are to add more programming languages and some cool features.
+# Mappings
 
-# TODO 
+To customize the mappings:
 
-- [ ] Support `cpp`.
+```
+" map F1 to building source files
+map <F1> <Plug>Nuweb_BuildSourceFiles
+" map F2 to compil the TeX file
+map <F2> <Plug>Nuweb_BuildTeXFile
+```
