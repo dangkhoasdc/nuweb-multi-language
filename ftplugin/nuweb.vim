@@ -24,12 +24,12 @@ endfunction
 
 function! s:BuildTeXFile(pth)
     write
-    execute "AsyncRun nuweb -l -o -r -d -p " . a:pth . " " . expand('%')
+    execute "AsyncRun -mode=1 nuweb -l -o -r -d -p " . a:pth . " " . expand('%')
 endfunction
 
 function! s:BuildSourceFiles(pth)
     write
-    execute "AsyncRun nuweb -t -p " . a:pth . " " . expand('%')
+    execute "AsyncRun -mode=1 nuweb -t -p " . a:pth . " " . expand('%')
 endfunction
 
 autocmd FileType nuweb nnoremap <Plug>Nuweb_BuildTeXFile
